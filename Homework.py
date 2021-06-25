@@ -1,14 +1,30 @@
-s = input()
+from typing import List
 
-print (any(c.isalnum() for c in s))
-print (any(c.isalpha() for c in s))
-print (any(c.isdigit() for c in s))
-print (any(c.islower() for c in s))
-print (any(c.isupper() for c in s))
+iterations = int(input("How many commands do you want to enter?: "))
+print("")
+list = []
+iterationNum = 0
 
-# The any function will see if the string meets ANY of the parameters. For example, in the 3rd line, it is looking if
-# any of the contents of the string contain a alphanumeric character, 0-9 or a-z. In the fourth line, it is looking for
-# any letter from a-z. If we didn't have the any function, it would look at the string as a whole. If we inputed qA2
-# into this code, everything would come True. If we didn't have the any command, it would look to see if the entire
-# string was uppercase, or if the entire string was numbers. But if at least one of the numbers is upper case or a
-# number, the command will print False.
+for i in range(iterations):
+    iterationNum = iterationNum + 1
+    commandInput = input(f"What command do you want to enter? (command {iterationNum}/{iterations}): ")
+    command = commandInput.split()
+    commandWord = command[0]
+
+    if  commandWord == 'insert':
+        index = int(command[2])
+        list.insert(index, command[1])
+    elif commandWord == 'print':
+        print(*list)
+    elif commandWord == 'remove':
+        list.remove(command[1])
+    elif commandWord == 'append':
+        list.append(command[1])
+    elif commandWord == 'sort':
+        list.sort()
+    elif commandWord == 'pop':
+        list.pop()
+    elif commandWord == 'reverse':
+        list.reverse()
+    else:
+        print("Something went wrong, please try again.")
