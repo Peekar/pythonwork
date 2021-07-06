@@ -1,11 +1,18 @@
-string = str(input())
-length = len(string)
-output = []
-proceed = input()
+width = int(input("Enter a number: "))
+length = width * 3
+width = width // 2
+symbol = '.|.'
+num = -1
 
-while proceed == 'y':
-    for i in range(length):
-        output.append(string[length - 1])
-        length = length - 1
+    # top half
+for i in range(width):
+    num = num + 2
+    print((symbol * num).center(length, '-'))
 
-print(*output, sep="")
+# welcome
+print('WELCOME'.center(length, '-'))
+
+# bottom half
+for i in range(width):
+    print((symbol * num).center(length, '-'))
+    num = num - 2
