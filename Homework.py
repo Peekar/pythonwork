@@ -1,18 +1,18 @@
-width = int(input("Enter a number: "))
-length = width * 3
-width = width // 2
-symbol = '.|.'
-num = -1
+# Hackerrank problem: find the second highest score of a competition.
+# Link - https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
 
-    # top half
-for i in range(width):
-    num = num + 2
-    print((symbol * num).center(length, '-'))
+scores = list(input().split())
+length = len(scores) - 2
+scores.sort()
+first = scores[length]
+print("Runner-up score is " + scores[length])
 
-# welcome
-print('WELCOME'.center(length, '-'))
+# or this method found on the internet
 
-# bottom half
-for i in range(width):
-    print((symbol * num).center(length, '-'))
-    num = num - 2
+scores = list(input().split())
+length = len(scores) - 1
+first = scores[length]
+while scores[length] == first:
+    scores.append(first)
+    length = length - 1
+print("Runner-up score is " + scores[length])
