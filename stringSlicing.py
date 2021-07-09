@@ -42,5 +42,4 @@ print(school[0].upper() + school[1:].lower()) # Using everything, we have solved
 # We can also use .upper(), .lower(), and .capitalize can do things some things as well
 print(school.upper())
 print(school.lower())
->>>>>>> 563417c33fd85f0616db6fad0ec5d9812888c71f
 print(school.capitalize())
